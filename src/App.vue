@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <LMREntranceTracker/>
+    <lmr-entrance-tracker/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import LMREntranceTracker from './components/LMREntranceTracker.vue'
 export default {
   name: 'app',
   components: {
-    LMREntranceTracker
+    'lmr-entrance-tracker': LMREntranceTracker
   }
 }
 </script>

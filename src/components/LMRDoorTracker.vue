@@ -4,6 +4,6 @@
 
 <script>
 export default {
-    name: 'LMRDoorTracker',
+    name: 'lmr-door-tracker',
 }
 </script>
