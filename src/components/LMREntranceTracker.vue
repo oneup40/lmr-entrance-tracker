@@ -76,7 +76,7 @@ export default {
                 "Graveyard (Grail)",
                 "Ruin (Medicine)",
                 "Ruin (Sacred Orb)",
-                "Birth (Woman Statue)",
+                "Birth (Skanda)",
                 "Surface [Time] (Ruins Entrance)",
             ],
             right: [
@@ -90,7 +90,7 @@ export default {
                 { name: "Goddess (Bottom)", used: false },
                 { name: "Goddess (Spaulder)", used: false },
                 { name: "Ruin (Map)", used: false },
-                { name: "Birth (Skanda)", used: false },
+                { name: "Birth (Woman Statue)", used: false },
                 { name: "Guidance [Time]", used: false },
             ]
         },
