@@ -25,7 +25,6 @@ export default {
     },
     methods: {
         changed: function() { 
-            console.log(this.$data.lastSelected.name, '-->', this.$data.selected.name);
             if (this.$data.selected.name != '---') {
                 this.$data.selected.used = true;
             }
