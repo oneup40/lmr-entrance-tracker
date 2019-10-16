@@ -2,7 +2,7 @@
     <div class="tracker-top">
         <lmr-pair-tracker title="Gates" :pairs="gatePairs"/>
         <lmr-pair-tracker title="Ladders" :pairs="ladderPairs"/>
-        <lmr-door-tracker/>
+        <lmr-door-tracker :doors="doors"/>
     </div>
 </template>
 
@@ -93,7 +93,28 @@ export default {
                 { name: "Birth (Woman Statue)", used: false },
                 { name: "Surface [Time] (Ruins Entrance)", used: false }
             ]
-        }
+        },
+
+        doors: [
+            {name: "Surface (Waterfall)", used: false},
+            {name: "Guidance (yagostr.exe)", used: false},
+            {name: "Mausoleum", used: false},
+            {name: "TotS", used: false},
+            {name: "Inferno Lower (Ankh)", used: false},
+            {name: "Inferno Upper (Spikes)", used: false},
+            {name: "Extinction Lower (Grail)", used: false},
+            {name: "Extinction Upper (Magatama)", used: false},
+            {name: "Endless (Exit Only)", used: false},
+            {name: "Illusion", used: false},
+            {name: "Graveyard", used: false},
+            {name: "Moonlight", used: false},
+            {name: "Goddess", used: false},
+            {name: "Ruin Lower (Earth Spear)", used: false},
+            {name: "Ruin Upper (Nuwa)", used: false},
+            {name: "Birth", used: false},
+            {name: "DC", used: false},
+            {name: "Time", used: false}
+        ]
     }),
 
     computed: {
