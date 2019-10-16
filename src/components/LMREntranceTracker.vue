@@ -1,20 +1,18 @@
 <template>
     <div class="tracker-top">
-        <LMRGateTracker/>
+        <LMRPairTracker title="Gates" :pairs="gatePairs"/>
         <LMRPairTracker title="Ladders" :pairs="ladderPairs"/>
         <LMRDoorTracker/>
     </div>
 </template>
 
 <script>
-import LMRGateTracker from './LMRGateTracker.vue'
 import LMRDoorTracker from './LMRDoorTracker.vue'
 import LMRPairTracker from './LMRPairTracker.vue'
 
 export default {
     name: 'LMREntranceTracker',
     components: {
-        LMRGateTracker,
         LMRDoorTracker,
         LMRPairTracker
     },
@@ -40,7 +38,7 @@ export default {
                 "Moonlight Right (Falling Block Trap)",
                 "Goddess (Lamp Refill)",
                 "Birth (Backside Door)",
-                "Mausoleum T (Top)",
+                "Mausoleum [Time] (Top)",
             ],
             down: [
                 { name: "Surface Left", used: false },
@@ -61,8 +59,39 @@ export default {
                 { name: "Goddess (Shield Trap)", used: false },
                 { name: "Birth (Grail Tablet)", used: false },
                 { name: "DC (Entrance)", used: false },
-                { name: "Guidance T", used: false },
-                { name: "Mausoleum T (Secret)", used: false },
+                { name: "Guidance [Time]", used: false },
+                { name: "Mausoleum [Time] (Secret)", used: false },
+            ]
+        },
+
+        gates: {
+            left: [
+                "Guidance (Entrance)",
+                "Mausoleum (Left of Ankh)",
+                "TotS (Buer)",
+                "Extinction (Upper)",
+                "Extinction (Lower)",
+                "Graveyard (mirai.exe)",
+                "Moonlight (Backside Door)",
+                "Goddess (Bottom)",
+                "Goddess (Spaulder)",
+                "Ruin (Map)",
+                "Birth (Skanda)",
+                "Guidance [Time]"
+            ],
+            right: [
+                { name: "Surface (Ruins Entrance)", used: false },
+                { name: "TotS (Flooded Upper)", used: false },
+                { name: "TotS (Flooded Lower)", used: false },
+                { name: "Inferno (Lava Floats)", used: false },
+                { name: "Endless (Top)", used: false },
+                { name: "Illusion (Dancing Child)", used: false },
+                { name: "Illusion (Chi You)", used: false },
+                { name: "Graveyard (Grail)", used: false },
+                { name: "Ruin (Medicine)", used: false },
+                { name: "Ruin (Sacred Orb)", used: false },
+                { name: "Birth (Woman Statue)", used: false },
+                { name: "Surface [Time] (Ruins Entrance)", used: false }
             ]
         }
     }),
@@ -72,6 +101,13 @@ export default {
             return {
                 first: this.$data.ladders.up,
                 second: this.$data.ladders.down
+            }
+        },
+
+        gatePairs: function() {
+            return {
+                first: this.$data.gates.left,
+                second: this.$data.gates.right
             }
         }
     }
