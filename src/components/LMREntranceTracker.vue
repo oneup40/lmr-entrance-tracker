@@ -39,6 +39,7 @@ export default {
                 "Goddess (Lamp Refill)",
                 "Birth (Backside Door)",
                 "Mausoleum [Time] (Top)",
+                "Goddess (Time Exit)",
             ],
             down: [
                 { name: "Surface Left", used: false },
@@ -61,6 +62,7 @@ export default {
                 { name: "DC (Entrance)", used: false },
                 { name: "Guidance [Time]", used: false },
                 { name: "Mausoleum [Time] (Secret)", used: false },
+                { name: "Inferno (LAVA)", used: false },
             ]
         },
 
