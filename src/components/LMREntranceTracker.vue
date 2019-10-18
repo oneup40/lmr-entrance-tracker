@@ -1,7 +1,13 @@
 <template>
     <div class="lmr-tracker-top">
-        <LMRPairTracker title="Gates" :pairs="gatePairs"/>
-        <LMRPairTracker title="Ladders" :pairs="ladderPairs"/>
+        <LMRPairTracker
+            title="Gates"
+            :pairs="gatePairs"
+        />
+        <LMRPairTracker
+            title="Ladders"
+            :pairs="ladderPairs"
+        />
         <LMRDoorTracker :doors="doors"/>
     </div>
 </template>

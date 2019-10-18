@@ -1,7 +1,15 @@
 <template>
-    <select class="lmr-pair-selector" @change="changed" v-model="selected">
+    <select
+        class="lmr-pair-selector"
+        @change="changed"
+        v-model="selected"
+    >
         <option :value="'---'">---</option>
-        <option v-for="entry of unusedEntries" :key="entry" :value="entry">
+        <option
+            v-for="entry of unusedEntries"
+            :key="entry"
+            :value="entry"
+        >
             {{entry}}
         </option>
     </select>
