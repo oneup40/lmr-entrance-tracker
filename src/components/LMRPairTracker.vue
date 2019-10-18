@@ -7,13 +7,18 @@
                     {{pairs.first[ndx]}}
                 </div>
                 <div>
-                    <lmr-pair-selector :entries="pairs.second" />
+                    <lmr-pair-selector
+                        :entries="pairs.second"
+                        :used="used"
+                        @select="selected"
+                        @deselect="deselected"
+                    />
                 </div>
                 <div class="lmr-pairs-spacer"/>
                 <div class="lmr-pairs-row-second"
-                    v-bind:class="{used: pairs.second[ndx].used}"
+                    v-bind:class="{used: used[pairs.second[ndx]]}"
                 >
-                    {{pairs.second[ndx].name}}
+                    {{pairs.second[ndx]}}
                 </div>
             </template>
         </div>
@@ -32,8 +37,25 @@ export default {
         title: String,
         pairs: Object
     },
-    data: () => ({
-    })
+    data() {
+        let used = {};
+
+        for (let name of this.$props.pairs.second) {
+            used[name] = false;
+        }
+
+        return {
+            used: used
+        };
+    },
+    methods: {
+        selected: function(name) {
+            this.$data.used[name] = true;
+        },
+        deselected: function(name) {
+            this.$data.used[name] = false;
+        }
+    }
 }
 </script>
 

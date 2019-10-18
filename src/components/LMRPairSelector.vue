@@ -1,8 +1,8 @@
 <template>
     <select class="pair-selector" @change="changed" v-model="selected">
-        <option v-bind:value="{name:'---'}">---</option>
-        <option v-for="entry of unusedEntries" :key="entry.name" v-bind:value="entry">
-            {{entry.name}}
+        <option v-bind:value="'---'">---</option>
+        <option v-for="entry of unusedEntries" :key="entry" v-bind:value="entry">
+            {{entry}}
         </option>
     </select>
 </template>
@@ -12,23 +12,28 @@
 export default {
     name: 'lmr-pair-selector',
     data: () => ({
-        lastSelected: {name:'---'},
-        selected: {name:'---'},
+        lastSelected: '---',
+        selected: '---',
     }),
     props: {
-        entries: Array
+        entries: Array,
+        used: Object
     },
     computed: {
         unusedEntries: function() {
-            return this.$props.entries.filter(entry => !entry.used || entry.name == this.$data.selected.name)
+            return this.$props.entries.filter(entry => !this.$props.used[entry] || entry == this.$data.selected)
         }
     },
     methods: {
         changed: function() { 
-            if (this.$data.selected.name != '---') {
-                this.$data.selected.used = true;
+            if (this.$data.selected != '---') {
+                this.$emit('select', this.$data.selected);
             }
-            this.$data.lastSelected.used = false;
+
+            if (this.$data.lastSelected != '---') {
+                this.$emit('deselect', this.$data.lastSelected);
+            }
+
             this.$data.lastSelected = this.$data.selected;
         }
     }
