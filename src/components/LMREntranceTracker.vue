@@ -1,8 +1,8 @@
 <template>
     <div class="lmr-tracker-top">
-        <lmr-pair-tracker title="Gates" :pairs="gatePairs"/>
-        <lmr-pair-tracker title="Ladders" :pairs="ladderPairs"/>
-        <lmr-door-tracker :doors="doors"/>
+        <LMRPairTracker title="Gates" :pairs="gatePairs"/>
+        <LMRPairTracker title="Ladders" :pairs="ladderPairs"/>
+        <LMRDoorTracker :doors="doors"/>
     </div>
 </template>
 
@@ -11,10 +11,10 @@ import LMRDoorTracker from './LMRDoorTracker.vue'
 import LMRPairTracker from './LMRPairTracker.vue'
 
 export default {
-    name: 'lmr-entrance-tracker',
+    name: 'LMREntranceTracker',
     components: {
-        'lmr-pair-tracker': LMRPairTracker,
-        'lmr-door-tracker': LMRDoorTracker,
+        LMRPairTracker,
+        LMRDoorTracker,
     },
     data: () => ({
         ladders: {

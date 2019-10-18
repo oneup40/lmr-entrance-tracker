@@ -7,7 +7,7 @@
                     {{door}}
                 </div>
                 <div :key="door + '-second'">
-                    <lmr-pair-selector
+                    <LMRPairSelector
                         :entries="doors"
                         :used="used"
                         @select="selected"
@@ -23,9 +23,9 @@
 import LMRPairSelector from './LMRPairSelector.vue'
 
 export default {
-    name: 'lmr-door-tracker',
+    name: 'LMRDoorTracker',
     components: {
-        'lmr-pair-selector': LMRPairSelector
+        LMRPairSelector
     },
     props: {
         doors: Array

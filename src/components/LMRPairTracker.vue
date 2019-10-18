@@ -7,7 +7,7 @@
                     {{pairs.first[ndx]}}
                 </div>
                 <div :key="pairs.first[ndx] + '-selector'">
-                    <lmr-pair-selector
+                    <LMRPairSelector
                         :entries="pairs.second"
                         :used="used"
                         @select="selected"
@@ -30,9 +30,9 @@
 import LMRPairSelector from './LMRPairSelector.vue'
 
 export default {
-    name: 'lmr-pair-tracker',
+    name: 'LMRPairTracker',
     components: {
-        'lmr-pair-selector': LMRPairSelector
+        LMRPairSelector
     },
     props: {
         title: String,

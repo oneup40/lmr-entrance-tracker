@@ -10,7 +10,7 @@
 <script>
 
 export default {
-    name: 'lmr-pair-selector',
+    name: 'LMRPairSelector',
     data: () => ({
         lastSelected: '---',
         selected: '---',
