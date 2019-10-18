@@ -19,14 +19,14 @@
 
 export default {
     name: 'LMRPairSelector',
-    data: () => ({
-        lastSelected: '---',
-        selected: '---',
-    }),
     props: {
         entries: Array,
         used: Object
     },
+    data: () => ({
+        lastSelected: '---',
+        selected: '---',
+    }),
     computed: {
         unusedEntries: function() {
             return this.$props.entries.filter(entry => !this.$props.used[entry] || entry == this.$data.selected)
