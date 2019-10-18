@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lmr-pairs-top {
     display: grid;
     grid-template-columns: auto auto 1fr auto;

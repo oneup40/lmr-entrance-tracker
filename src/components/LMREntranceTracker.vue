@@ -1,5 +1,5 @@
 <template>
-    <div class="tracker-top">
+    <div class="lmr-tracker-top">
         <lmr-pair-tracker title="Gates" :pairs="gatePairs"/>
         <lmr-pair-tracker title="Ladders" :pairs="ladderPairs"/>
         <lmr-door-tracker :doors="doors"/>
@@ -137,10 +137,8 @@ export default {
 }
 </script>
 
-<style>
-
-.tracker-top {
+<style scoped>
+.lmr-tracker-top {
     max-width: 800px;
 }
-
 </style>

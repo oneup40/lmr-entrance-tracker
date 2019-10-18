@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .lmr-doors-top {
     display: grid;
     grid-template-columns: auto auto;
