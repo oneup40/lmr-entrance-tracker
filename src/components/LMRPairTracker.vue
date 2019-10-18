@@ -3,10 +3,10 @@
         <div><h3>{{title}}</h3></div>
         <div class="lmr-pairs-top">
             <template v-for="(_, ndx) of pairs.first">
-                <div class="lmr-pairs-row-first">
+                <div class="lmr-pairs-row-first" :key="pairs.first[ndx] + '-first'">
                     {{pairs.first[ndx]}}
                 </div>
-                <div>
+                <div :key="pairs.first[ndx] + '-selector'">
                     <lmr-pair-selector
                         :entries="pairs.second"
                         :used="used"
@@ -14,9 +14,10 @@
                         @deselect="deselected"
                     />
                 </div>
-                <div class="lmr-pairs-spacer"/>
+                <div class="lmr-pairs-spacer" :key="pairs.first[ndx] + '-spacer'"/>
                 <div class="lmr-pairs-row-second"
-                    v-bind:class="{used: used[pairs.second[ndx]]}"
+                    :class="{used: used[pairs.second[ndx]]}"
+                    :key="pairs.first[ndx] + '-second'"
                 >
                     {{pairs.second[ndx]}}
                 </div>

@@ -3,10 +3,10 @@
         <div><h3>Doors</h3></div>
         <div class="lmr-doors-top">
             <template v-for="door of doors">
-                <div class="lmr-doors-row-first">
+                <div class="lmr-doors-row-first" :key="door + '-first'">
                     {{door}}
                 </div>
-                <div>
+                <div :key="door + '-second'">
                     <lmr-pair-selector
                         :entries="doors"
                         :used="used"

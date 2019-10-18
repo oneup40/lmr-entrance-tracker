@@ -1,7 +1,7 @@
 <template>
     <select class="pair-selector" @change="changed" v-model="selected">
-        <option v-bind:value="'---'">---</option>
-        <option v-for="entry of unusedEntries" :key="entry" v-bind:value="entry">
+        <option :value="'---'">---</option>
+        <option v-for="entry of unusedEntries" :key="entry" :value="entry">
             {{entry}}
         </option>
     </select>
